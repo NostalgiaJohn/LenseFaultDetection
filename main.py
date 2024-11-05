@@ -48,9 +48,9 @@ class Process:
         self.model.eval()  # Set model to evaluation mode
         with torch.no_grad():  # No gradient calculation
             # Convert the image to a tensor
-            # img_tensor = self.data.image_T_list[1]
+            img_tensor = self.data.image_T_list[6]
             # img_tensor = self.add_gaussian_noise(self.data.image)
-            img_tensor = self.add_salt_and_pepper_noise(self.data.image)
+            # img_tensor = self.add_salt_and_pepper_noise(self.data.image)
             patch_size = self.data.patch_size
 
             img_height, img_width = img_tensor.shape[1:]
@@ -103,7 +103,6 @@ class Process:
 
         # Overlay red where interest_mask is 1
         rgb_image[mask == 1] = [255, 0, 0]  # Set red pixels for regions of interest
-
         # Convert back to a PIL Image
         overlay_image = Image.fromarray(rgb_image)
 
@@ -183,4 +182,5 @@ if __name__ == "__main__":
     # instance.Train()
     # instance.save_model()
     instance.load_model()
+    # for _ in range(20):
     instance.Test()

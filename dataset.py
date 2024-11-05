@@ -37,6 +37,7 @@ class Data:
         image_T_list = [image_T, image_T_R1, image_T_R2, image_T_R3, image_T_gauss, image_T_spn, image_T_new]
         mask_T_list = [mask_T, mask_T_R1, mask_T_R2, mask_T_R3, mask_T, mask_T, mask_T_new]
 
+
         # Lists to store patches and labels
         image_patches = []
         labels = []
